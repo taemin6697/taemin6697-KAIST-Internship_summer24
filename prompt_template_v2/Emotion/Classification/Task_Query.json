@@ -1,0 +1,12 @@
+{
+      "iemocap_stmliO": "“Analyze and focus on the emotions that arise in the given conversation. The conversation is a transcript of two speakers, each index representing one utterance. Examine the emotions that arise in each utterance throughout the conversation. Select a single emotion label from the given choices for each utterance in the conversation. \n\n",
+      "iemocap_stmliX": "Analyze and focus on the emotions that arise in the given conversation. The conversation is a transcript of two speakers, each index representing one utterance. Examine the emotions that arise in each utterance throughout the conversation. Select a single emotion label from the given choices for each utterance in the conversation.\n\n",
+      "emobench_stmliO": "Analyze the scenario, paying close attention to the emotions the subject is experiencing, and select the correct answer to the question. Provide your answer and a confidence score between 0-1 for your prediction. Additionally, briefly explain the main reasons supporting your classification decision to help me understand your thought process. This task is vital to my career, and I greatly value your thorough analysis.",
+      "emobench_stmliX" : "Analyze the scenario, paying close attention to the emotions the subject is experiencing, and select the correct answer to the question.",
+      "goemotion_stmliO": "Analyze the Reddit post, focusing on the emotions expressed, and select the emotion label that best represents the overall sentiment of the post. Provide your answer and a confidence score between 0-1 for your prediction. Additionally, briefly explain the main reasons supporting your classification decision to help me understand your thought process. This task is vital to my career, and I greatly value your thorough analysis.",
+      "goemotion_stmliX": "Analyze the Reddit post, focusing on the emotions expressed, and select the emotion label that best represents the overall sentiment of the post."
+}
+
+
+
+
