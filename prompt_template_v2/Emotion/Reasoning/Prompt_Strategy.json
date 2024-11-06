@@ -6,7 +6,7 @@
     "fewshot_icl" : "내용",
     "fewshot_cot" : " 내용"
   },
-  "emobench_eu" : {
+  "emobench" : {
     "none" : "",
     "zeroshot_cot" : "The scenario and question are given below. Let’s think step by step.\n",
     "zeroshot_ecot" : "Follow the steps to analyze the emotions in the content. Let’s think step by step.\nStep1: Describe the content of the scenario.\nStep2: Identify what situation \"{subject}\" is going through.\nStep3: Consider how  \"{subject}\" can be impacted emotionally.\nStep4: Search for emotional cues.\n",

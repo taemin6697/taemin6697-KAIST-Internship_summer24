@@ -1,58 +1,57 @@
 import subprocess
 
-# 모델 파라미터 설정 (여러 모델을 지정 가능)
 model_parameters = ['GPT4o']
 
-# 데이터셋과 기타 파라미터 설정
+# Dataset and parameters setting
 tasks = [
     {
         'data_task': 'Emotion',
         'problem_task': 'Classification',
         'data': 'emobench',
-        'TQ': 'emobench_stmliX',
+        'TQ': ['emobench-Clear', 'emobench-EmDe', 'emobench-Ana'],
         'CT': 'emobench',
         'OI': 'emobench',
-        'SI_options': ['persona-none', 'persona-expert'],
+        'SI': 'persona-none',
         'PS_base': 'emobench'
     },
     {
         'data_task': 'Emotion',
         'problem_task': 'Classification',
         'data': 'goemotion',
-        'TQ': 'goemotion_stmliX',
+        'TQ': ['goemotion-Clear', 'goemotion-EmDe', 'goemotion-Ana'],
         'CT': 'goemotion',
         'OI': 'goemotion',
-        'SI_options': ['persona-none', 'persona-expert'],
+        'SI': 'persona-none',
         'PS_base': 'goemotion'
     },
     {
         'data_task': 'Mental-Health',
         'problem_task': 'Classification',
         'data': 'dreaddit',
-        'TQ': 'dreaddit_stmliX',
+        'TQ': ['dreaddit-Clear', 'dreaddit-EmDe', 'dreaddit-Ana'],
         'CT': 'dreaddit',
         'OI': 'dreaddit',
-        'SI_options': ['persona-none', 'persona-expert'],
+        'SI': 'persona-none',
         'PS_base': 'dreaddit'
     },
     {
         'data_task': 'Mental-Health',
         'problem_task': 'Classification',
         'data': 'cssrs',
-        'TQ': 'cssrs_stmliX',
+        'TQ': ['cssrs-Clear', 'cssrs-EmDe', 'cssrs-Ana'],
         'CT': 'cssrs',
         'OI': 'cssrs',
-        'SI_options': ['persona-none', 'persona-expert'],
+        'SI': 'persona-none',
         'PS_base': 'cssrs'
     },
     {
         'data_task': 'Mental-Health',
         'problem_task': 'Classification',
         'data': 'sdcnl',
-        'TQ': 'sdcnl_stmliX',
+        'TQ': ['sdcnl-Clear', 'sdcnl-EmDe', 'sdcnl-Ana'],
         'CT': 'sdcnl',
         'OI': 'sdcnl',
-        'SI_options': ['persona-none', 'persona-expert'],
+        'SI': 'persona-none',
         'PS_base': 'sdcnl'
     }
 ]
@@ -61,17 +60,17 @@ tasks = [
 def generate_commands(max_rows=200):
     commands = []
     for task in tasks:
-        for SI in task['SI_options']:
-            for shot in range(4,6):  # shot 0~3
-                # shot이 0일 때는 PS를 '{dataset}-none'으로, shot이 1 이상일 때는 '{dataset}-fewshot_icl'로 설정
+        for TQ in task['TQ']:
+            for shot in range(0,1):  # shot 0~3
+                # When the shot is 0, set PS to '{dataset}-none'; when the shot is 1 or more, set it to '{dataset}-fewshot_icl'.
                 PS = f"{task['PS_base']}-none" if shot == 0 else f"{task['PS_base']}-fewshot_icl"
 
                 commands.append([
                     '--data_task', task['data_task'],
                     '--problem_task', task['problem_task'],
                     '--data', task['data'],
-                    '--SI', SI,
-                    '--TQ', task['TQ'],
+                    '--SI', task['SI'],
+                    '--TQ', TQ,
                     '--PS', PS,
                     '--CT', task['CT'],
                     '--LD', 'none',
