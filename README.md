@@ -39,13 +39,13 @@ For Efficient_auto_run_seq.py, use a list format to input model names and set pa
 To add API keys for the models, create an api_keys.json file in the gen_v2/gpt directory with the following dictionary format:
 
 json
-'''
+```python
 {
   "Gemini": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "Sonnet": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "GPT4o": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
-'''
+```
 
 ## Evaluation
 
