@@ -12,6 +12,17 @@ This is the official implementation of Prompt Modularization & Emotion Recogniti
 
 ## Data Preparation
 
+Please execute each .py file individually in the preprocess_data folder. The data folder includes the following datasets:
+
+SDCNL: A dataset for classifying between depression and suicidal tendencies using web-scraped data. [SDCNL](https://github.com/ayaanzhaque/SDCNL)
+CSSRS: Data based on the Columbia-Suicide Severity Rating Scale for assessing suicidal ideation and behavior. [CSSRS](https://paperswithcode.com/dataset/reddit-c-ssrs) [download](https://www.kaggle.com/datasets/thedevastator/c-ssrs-labeled-suicidality-in-500-anonymized-red) 
+Dreaddit: A Reddit dataset for stress analysis in social media. [Dreaddit](https://arxiv.org/abs/1911.00133)[download](https://www.kaggle.com/datasets/monishakant/dataset-for-stress-analysis-in-social-media)
+EmoBench: An emotion recognition benchmark dataset evaluating the emotional intelligence of large language models. [EmoBench](https://github.com/Sahandfer/EmoBench)
+EmoryNLP: A dataset for emotion detection in multiparty dialogue, developed by Emory University's NLP research group. [EmoryNLP](https://github.com/emorynlp/emotion-detection)
+IEMOCAP: The Interactive Emotional Dyadic Motion Capture Database for emotion and sentiment analysis.
+
+Please ensure you have the appropriate permissions and licenses to use these datasets in your project.
+
 ## Inference with GPT and Prompt Templates
 
 ## Evaluation
