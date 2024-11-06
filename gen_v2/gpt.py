@@ -277,9 +277,13 @@ class OllamaBase(BaseModel):
             response = self.client.chat(
                 model=self.model_name,
                 messages=[
-                    {'role': 'user', 'content': system_prompt + user_prompt},
+                    {'role': 'system', 'content': system_prompt},
+                    {'role': 'user', 'content': user_prompt},
                 ],
+
+                options={"temperature": 0.0, "num_predict":128},
             )
+
             return response['message']['content']
         except Exception as e:
             print(f"Error during Ollama response: {e}")
@@ -292,12 +296,12 @@ class OllamaBase(BaseModel):
 
 class OllamaLlama(OllamaBase):
     def __init__(self, api_key, args):
-        super().__init__(api_key, args, model_name='llama3.1:8b-instruct-q4_0')
+        super().__init__(api_key, args, model_name='llama3.1:8b-instruct-q8_0')
 
 
 class OllamaQwen(OllamaBase):
     def __init__(self, api_key, args):
-        super().__init__(api_key, args, model_name='qwen2:7b-instruct-q4_0')
+        super().__init__(api_key, args, model_name='qwen2:7b-instruct-q8_0')
 
 
 class OllamaGemma(OllamaBase):
@@ -307,13 +311,16 @@ class OllamaGemma(OllamaBase):
 
 class OllamaMistral(OllamaBase):
     def __init__(self, api_key, args):
-        super().__init__(api_key, args, model_name='mistral-nemo:12b-instruct-2407-q4_0')
+        super().__init__(api_key, args, model_name='mistral:7b-instruct-v0.3-q8_0')
 class OllamaPhi(OllamaBase):
     def __init__(self, api_key, args):
         super().__init__(api_key, args, model_name='phi3:14b-medium-4k-instruct-q4_0')
 class OllamaQwen32B(OllamaBase):
     def __init__(self, api_key, args):
         super().__init__(api_key, args, model_name='qwen:32b-chat-v1.5-q4_0')
+class OllamaPhi3_5(OllamaBase):
+    def __init__(self, api_key, args):
+        super().__init__(api_key, args, model_name='phi3.5:3.8b-mini-instruct-fp16')
 
 def load_api_keys():
     with open('api_keys.json', 'r') as file:
@@ -340,6 +347,8 @@ def load_model(model_name, args):
         return OllamaPhi(api_key=api_keys['Ollama_Phi'], args=args)
     elif model_name == 'Ollama_Qwen32B':
         return OllamaQwen32B(api_key=api_keys['Ollama_Qwen32B'], args=args)
+    elif model_name == 'OllamaPhi3_5':
+        return OllamaPhi3_5(api_key=api_keys['OllamaPhi3_5'], args=args)
     else:
         raise ValueError(f"Unknown model name: {model_name}")
 

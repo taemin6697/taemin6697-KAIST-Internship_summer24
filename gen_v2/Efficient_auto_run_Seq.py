@@ -91,7 +91,6 @@ def run_command_for_model(model, commands):
         try:
             result = subprocess.run(full_command, check=True, text=True, capture_output=True)
 
-            # 출력 결과를 표시합니다.
             print(f"Standard Output for {model}:\n{result.stdout}")
             print(f"Standard Error for {model}:\n{result.stderr}")
 
@@ -102,7 +101,6 @@ def run_command_for_model(model, commands):
     return 0
 
 
-# 모델을 순차적으로 실행합니다.
 def run_all_models():
     commands = generate_commands(max_rows=200)
     for model in model_parameters:
