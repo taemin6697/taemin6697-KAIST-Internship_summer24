@@ -30,10 +30,22 @@ Manage these datasets on Hugging Face. Please upload them as private for copyrig
 
 ## Inference with GPT and Prompt Templates
 
-Files like `gen_v2/Efficient_auto_run.py` can be executed quickly due to parallel processing.
+To execute the gen_v2/systematic_evaluation.py file with the same parameters as gen_v2/Efficient_auto_run.py, follow these steps to initiate inference since there are multiple experiment runs:
 
-For `Efficient_auto_run_seq.py`, use a list format to input model names and set parameters according to the JSON path in `prompt_template_v2`.
+Files like gen_v2/Efficient_auto_run.py can be executed quickly due to parallel processing.
 
+For Efficient_auto_run_seq.py, use a list format to input model names and set parameters according to the JSON path in prompt_template_v2.
+
+To add API keys for the models, create an api_keys.json file in the gen_v2/gpt directory with the following dictionary format:
+
+json
+'''
+{
+  "Gemini": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "Sonnet": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "GPT4o": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+}
+'''
 
 ## Evaluation
 
