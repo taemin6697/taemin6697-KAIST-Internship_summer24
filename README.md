@@ -49,3 +49,9 @@ The output files generated from these executions will be created in the same dir
 
 ## Evaluation
 
+Use the `gen_v2/eval/eval_classification.py` file to perform evaluations. In the main function, select the models you wish to evaluate by modifying the models list. 
+
+Also, within the if __name__ == '__main__' block, adjust the base_folder_path to match the path of your results folder to proceed with the evaluation.
+
+The evaluated results will be generated in the same location as the results folder.
+
