@@ -36,7 +36,7 @@ Files like `gen_v2/Efficient_auto_run.py` can be executed quickly due to paralle
 
 For `Efficient_auto_run_seq.py`, use a list format to input model names and set parameters according to the JSON path in `prompt_template_v2`.
 
-To add API keys for the models, create an `api_keys.json` file in the `gen_v2/gpt` directory with the following dictionary format:
+To add API keys for the models, create an `api_keys.json` file in the `gen_v2/` directory with the following dictionary format:
 
 ```python
 {
